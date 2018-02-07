@@ -1,6 +1,9 @@
-def minimum(lst):
+def minimum(lst, lst2=[]):
     small = lst[0]
     for a in lst:
+        if a < small:
+            small = a
+    for a in lst2:
         if a < small:
             small = a
     return small
@@ -16,12 +19,20 @@ if __name__ == '__main__':
         numberOfCars = int(input())
         for y in range(0, numberOfCars):    # runs input to collect the number of cars
             mountain.append(int(input()))
-        while not len(mountain) == 0:
+        # print(mountain)
+        while len(mountain) != 0 and len(branch) == 0:
             if mountain[-1] == minimum(mountain):
                 river.append(mountain.pop(-1))
             else:
                 branch.append(mountain.pop(-1))
-        while len(mountain) == 0 and not len(branch) == 0:
+        while len(mountain) != 0 and len(branch) != 0:
+            if mountain[-1] == minimum(mountain, branch):
+                river.append(mountain.pop(-1))
+            elif branch[-1] == minimum(mountain, branch):
+                river.append(branch.pop(-1))
+            else:
+                branch.append(mountain.pop(-1))
+        while len(mountain) == 0 and len(branch) != 0:
             if branch[-1] == minimum(branch):
                 river.append(branch.pop(-1))
             else:
@@ -29,10 +40,9 @@ if __name__ == '__main__':
                 break
         if len(mountain) == 0 and len(branch) == 0:
             YN.append('Y')
+        # print('-------end of test---------')
+        mountain = []
+        branch = []
+        river = []
     for x in YN:
         print(x)
-    # print('mountain', mountain)
-    # print('branch', branch)
-    # print('river', river)
-
-
