@@ -11,6 +11,7 @@ if __name__ == '__main__':
     river = []
     branch = []
     possible = ''
+    YN = []
     for x in range(0, tests):       # runs whole program number of times as the tests
         numberOfCars = int(input())
         for y in range(0, numberOfCars):    # runs input to collect the number of cars
@@ -24,11 +25,12 @@ if __name__ == '__main__':
             if branch[-1] == minimum(branch):
                 river.append(branch.pop(-1))
             else:
-                possible = 'N'
+                YN.append('N')
                 break
         if len(mountain) == 0 and len(branch) == 0:
-            possible = 'Y'
-        print(possible)
+            YN.append('Y')
+    for x in YN:
+        print(x)
     # print('mountain', mountain)
     # print('branch', branch)
     # print('river', river)
