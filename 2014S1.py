@@ -11,4 +11,5 @@ for x in range(0,m):
             newfriends.append(friends[y])
     friends = list(newfriends)
     newfriends = []
-print(friends)
+for x in friends:
+    print(x)
