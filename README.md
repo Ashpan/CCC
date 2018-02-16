@@ -12,6 +12,10 @@ Stuff that I've done for the CCC
 - [X] 2017 Junior 2
 - [ ] 2017 Junior 3
 - [ ] 2017 Junior 4
+- [X] 2018 Junior 1
+- [X] 2018 Junior 2
+- [X] 2018 Junior 3
+- [X] 2018 Junior 4
 - [X] 2018 Senior 1
 - [X] 2018 Senior 2
 - [ ] 2018 Senior 3 - Almost Complete
